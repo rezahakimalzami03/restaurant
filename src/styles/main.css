@@ -1,0 +1,358 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #424242;
+}
+
+.skip-link {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  min-height: 44px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: yellowgreen;
+  font-weight: bold;
+}
+
+.wrap {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-content: center;
+}
+
+.logo {
+  text-decoration: none;
+  padding-left: 20px;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+}
+
+.logo:hover {
+  color: yellowgreen;
+}
+
+.nav__list {
+  width: 300px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+}
+
+.nav__items {
+  margin-right: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+}
+
+.nav__items:hover {
+  cursor: pointer;
+  color: yellowgreen;
+  font-weight: bolder;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 60%;
+  width: 100%;
+  text-align: center;
+  background-image: url("../public/images/heros/hero-image_4.jpg");
+  background-position: center;
+}
+
+.hero__inner {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.hero__title {
+  color: white;
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+.hero__tagline {
+  color: white;
+  margin-top: 16px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.content-element {
+  margin-top: 30px;
+  text-align: center;
+  background-color: gray;
+}
+
+.content-label {
+  margin: 20px 0px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: lighter;
+  color: white;
+}
+
+.content-label::after {
+  content: "";
+  margin: 16px 15%;
+  display: block;
+  border-bottom: 2px solid white;
+}
+
+.resto-content {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 20px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+
+.posts {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 100%;
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#posts_thumb {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.posts_city {
+  position: absolute; /* posisi layout dapat diatur berdasarkan position relative di class posts */
+  top: 30px;
+  left: 10px;
+  border: 1px solid black;
+  padding: 5px;
+  color: black;
+  font-size: medium;
+  background-color: white;
+  font-weight: bolder;
+}
+
+.posts_item {
+  padding: 20px;
+}
+
+.posts_item_rate {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.posts_item_rate a {
+  color: rgba(255, 255, 0, 0.749);
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  width: 80px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.posts_item_title {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.posts_item_title a {
+  width: 100%;
+  min-height: 50px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.posts_item_description {
+  margin-top: 15px;
+  font-size: 12px;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+.detail-resto {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.label-detail-resto {
+  width: 50%;
+  margin: 50px auto;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  border-bottom: 2px solid white;
+}
+
+.restaurant__detail {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 40px;
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.restaurant__title {
+  width: 92%;
+  margin: 30px;
+  text-align: center;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.restaurant__poster {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.restaurant__information {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.label__information {
+  text-align: center;
+  margin: 30px 0px;
+  line-height: 50px;
+  border: 4px solid white;
+}
+
+.detail__deskripsi {
+  text-align: justify;
+}
+
+.restaurant__information #list {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+#restaurants {
+  width: 50%;
+  margin: 20px 380px;
+  padding: 20px;
+}
+
+.not__found__restaurant {
+  text-align: center;
+  font-size: large;
+  color: white;
+}
+
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.footer-text {
+  background-color: #333;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  font-size: 17px;
+  text-align: center;
+}

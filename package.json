@@ -10,8 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "e2e": "codeceptjs run --steps",
-    "build-image": "node sharp.js",
-    "deploy": "gh-pages -d dist"
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",

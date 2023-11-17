@@ -1,41 +1,24 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable linebreak-style */
-/* eslint-disable arrow-parens */
-/* eslint-disable prefer-template */
-/* eslint-disable linebreak-style */
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const sourcePath = path.resolve(__dirname, 'src/public/images');
-const destinationPath = path.resolve(__dirname, 'dist/images');
+const target = path.resolve(__dirname, 'src/public/images');
+const destination = path.resolve(__dirname, 'src/public/images');
 
-if (!fs.existsSync(destinationPath)) {
-  fs.mkdirSync(destinationPath);
+if (!fs.existsSync(destination)) {
+  fs.mkdirSync(destination);
 }
 
-// List semua file dalam direktori sumber
-const files = fs.readdirSync(sourcePath);
+fs.readdirSync(target).forEach((image) => {
+  sharp(`${target}/${image}`)
+    .resize(800).toFile(path.resolve(__dirname, `${destination}/${image.split('.')
+      .slice(0, -1)
+      .join('.')}-large.jpg`));
 
-// Filter hanya file gambar (contoh: jpg, png, dll.)
-const imageFiles = files.filter(file => /\.(jpg|jpeg|png)$/i.test(file));
-
-// Fungsi untuk mengonversi dan menyimpan gambar ke format WebP
-const convertToWebP = async (file) => {
-  const inputFilePath = path.join(sourcePath, file);
-  const outputFilePath = path.join(destinationPath, path.parse(file).name + '.webp');
-
-  await sharp(inputFilePath)
-    .webp({ quality: 80 }) // Sesuaikan dengan kualitas yang diinginkan
-    .toFile(outputFilePath, (err, info) => {
-      if (err) {
-        console.error(`Error converting ${file} to WebP:`, err);
-      } else {
-        console.log(`Successfully converted ${file} to WebP. Info:`, info);
-      }
-    });
-};
-
-// Loop melalui setiap file gambar dan konversi ke WebP
-imageFiles.forEach(convertToWebP);
+  sharp(`${target}/${image}`)
+    .resize(480)
+    .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-small.jpg`));
+});

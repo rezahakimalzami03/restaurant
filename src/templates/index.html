@@ -4,20 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Hunter</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Preconnect to fonts.gstatic.com -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link rel="manifest" href="./app.webmanifest" />
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-    <link rel="icon" href="./favicon.png" />
 
+    <!-- Preload and asynchronously load Google Fonts -->
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Preconnect to CDN for Font Awesome -->
+    <link
+      rel="preconnect"
+      href="https://stackpath.bootstrapcdn.com/"
+      crossorigin
+    />
+
+    <!-- Asynchronously load Font Awesome CSS -->
+    <link
+      defer
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+
+    <link rel="manifest" href="./app.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="icon" href="./favicon.png" />
   </head>
   <body>
     <a href="#maincontent" class="skip-link">Skip To Content</a>

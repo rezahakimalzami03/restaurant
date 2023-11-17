@@ -40,7 +40,21 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="posts">
-    <img id="posts_thumb" class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" style="width: 100%; height: auto;" title="${restaurant.name}">
+    <picture>
+        <!-- Gunakan tag <picture> untuk menyediakan sumber gambar WebP dan fallback -->
+        <source
+            srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId.replace(/\.[^/.]+$/, '.webp')}"
+            type="image/webp"
+        />
+        <img
+            id="posts_thumb"
+            class="lazyload"
+            src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
+            alt="${restaurant.name}"
+            style="width: 100%; height: auto;"
+            title="${restaurant.name}"
+        />
+    </picture>
         <div class="posts_city">Kota : ${restaurant.city}</div>
             <div class="posts_item">
                 <p class="posts_item_rate"><a href="#">⭐️ ${restaurant.rating}</a></p>

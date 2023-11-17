@@ -49,7 +49,7 @@ const createRestaurantItemTemplate = (restaurant) => `
         <img
             id="posts_thumb"
             class="lazyload"
-            src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
+            data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
             alt="${restaurant.name}"
             style="width: 100%; height: auto;"
             title="${restaurant.name}"
